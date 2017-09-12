@@ -22,6 +22,7 @@ public class DBUtility {
 			try {
 				Properties props = new Properties();
 				InputStream inputStream = DBUtility.class.getClassLoader().getResourceAsStream("/config.properties");
+				//InputStream inputStream = DBUtility.class.getClassLoader().getResourceAsStream("/config.properties.local");
 				props.load(inputStream);
 				String driver = props.getProperty("driver");
 				String url = props.getProperty("url");

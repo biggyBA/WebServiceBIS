@@ -14,9 +14,9 @@ public class FaultsController {
 	
 	FaultService faultService = new FaultService();
 	
-	@RequestMapping (value = "/getAllFaults", method = RequestMethod.GET, headers = "Accept=application/json")
-	public List<Fault> getFaults(){
-		List<Fault> faults = faultService.getFaults();
+	@RequestMapping (value = "/listToDoFaults", method = RequestMethod.GET, headers = "Accept=application/json")
+	public List<Fault> listToDoFaults(){
+		List<Fault> faults = faultService.listToDoFaults();
 		return faults;
 	}
 

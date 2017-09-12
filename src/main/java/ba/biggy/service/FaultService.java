@@ -23,7 +23,7 @@ private Connection connection;
 	
 	
 	
-	public List<Fault> getFaults(){
+	public List<Fault> listToDoFaults(){
 		
 		List<Fault> faults = new ArrayList<Fault>();
 		
@@ -33,7 +33,20 @@ private Connection connection;
 			
 			while (rs.next()) {
 				Fault fault = new Fault();
-				fault.setClient(rs.getString("Buyer"));
+
+				fault.setId(rs.getInt(Constants.ID_COLUMN));
+	            fault.setDate(rs.getString(Constants.DATE_COLUMN));
+	            fault.setTime(rs.getString(Constants.TIME_COLUMN));
+	            fault.setIdent(rs.getString(Constants.IDENT_COLUMN));
+	            fault.setClient(rs.getString(Constants.CLIENT_COLUMN));
+	            fault.setStreet(rs.getString(Constants.STREET_COLUMN));
+	            fault.setPlace(rs.getString(Constants.PLACE_COLUMN));
+	            fault.setPhoneOne(rs.getString(Constants.PHONE_ONE_COLUMN));
+	            fault.setPhoneTwo(rs.getString(Constants.PHONE_TWO_COLUMN));
+	            fault.setFaultDescription(rs.getString(Constants.FAULT_DESCRIPTION_COLUMN));
+	            fault.setNote(rs.getString(Constants.NOTE_COLUMN));
+	            fault.setServiceman(rs.getString(Constants.SERVICEMAN_COLUMN));
+	            fault.setTypeOfService(rs.getString(Constants.TYPE_OF_SERVICE_COLUMN));
 				
 				faults.add(fault);
 			}
